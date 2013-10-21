@@ -41,9 +41,9 @@ public class MainActivity extends Activity
 
 	job = jobDAO.addJob(job);
 
-	TextView view = (TextView) findViewById(R.id.textView1);
-	view.setText(job.getJobId() + "-" + job.getCompany() + "+"
-		+ job.getDescription());
+//	TextView view = (TextView) findViewById(R.id.textView1);
+//	view.setText(job.getJobId() + "-" + job.getCompany() + "+"
+//		+ job.getDescription());
 
     }
 
