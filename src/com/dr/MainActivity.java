@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
 
 import com.dr.objects.Job;
 import com.dr.objects.dao.JobDAO;
-import com.dr.R;
 
 public class MainActivity extends Activity
 {

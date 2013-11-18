@@ -1,115 +1,48 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color_bg" >
-    
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:id="@+id/mainContainer"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height"
-            android:layout_marginBottom="@dimen/margin_botom_row"
-            android:layout_marginLeft="@dimen/margin_botom_row"
-            android:layout_marginRight="@dimen/margin_botom_row"
-            android:background="@color/color_row" >
-
-            <TextView
-                style="@style/MenuFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-                android:text="@string/row_1" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height"
-            android:layout_marginBottom="@dimen/margin_botom_row"
-            android:layout_marginLeft="@dimen/margin_botom_row"
-            android:layout_marginRight="@dimen/margin_botom_row"
-            android:background="@color/color_row" >
-
-            <TextView
-                style="@style/MenuFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-                android:text="@string/row_2" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height"
-            android:layout_marginBottom="@dimen/margin_botom_row"
-            android:layout_marginLeft="@dimen/margin_botom_row"
-            android:layout_marginRight="@dimen/margin_botom_row"
-            android:background="@color/color_row" >
-
-            <TextView
-                style="@style/MenuFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-                android:text="@string/row_3" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height"
-            android:layout_marginBottom="@dimen/margin_botom_row"
-            android:layout_marginLeft="@dimen/margin_botom_row"
-            android:layout_marginRight="@dimen/margin_botom_row"
-            android:background="@color/color_row" >
-
-            <TextView
-                style="@style/MenuFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-                android:text="@string/row_4" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height"
-            android:layout_marginBottom="@dimen/margin_botom_row"
-            android:layout_marginLeft="@dimen/margin_botom_row"
-            android:layout_marginRight="@dimen/margin_botom_row"
-            android:background="@color/color_row" >
-
-            <TextView
-                style="@style/MenuFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-                android:text="@string/row_5" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height"
-            android:layout_marginBottom="@dimen/margin_botom_row"
-            android:layout_marginLeft="@dimen/margin_botom_row"
-            android:layout_marginRight="@dimen/margin_botom_row"
-            android:background="@color/color_row" >
-
-            <TextView
-                style="@style/MenuFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-                android:text="@string/row_6" >
-            </TextView>
-        </LinearLayout>
+        android:layout_weight="1">
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/dream_track"/>
     </LinearLayout>
 
-</ScrollView>
+
+    <Button
+        style="@style/MainButton"
+        android:text="@string/applications"
+        android:drawableLeft="@drawable/applications" />
+
+    <Button
+        style="@style/MainButton"
+        android:text="@string/interviews"
+        android:drawableLeft="@drawable/interviews" />
+
+    <Button
+        style="@style/MainButton"
+        android:text="@string/search"
+        android:drawableLeft="@drawable/search" />
+
+    <Button
+        style="@style/MainButton"
+        android:text="@string/profile"
+        android:drawableLeft="@drawable/user" />
+
+    <Button
+        style="@style/MainButton"
+        android:text="@string/documents"
+        android:drawableLeft="@drawable/documents" />
+
+    <Button
+        style="@style/MainButton"
+        android:text="@string/events"
+        android:drawableLeft="@drawable/events" />
+
+</LinearLayout>
