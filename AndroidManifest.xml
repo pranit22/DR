@@ -10,17 +10,88 @@
 
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/dream_track"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" android:debuggable="true">
-        <activity
-            android:name="com.dr.MainActivity"
-            android:label="@string/app_name" >
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.dr.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dr.AddJobActivity"
+            android:label="@string/title_activity_add_job" >
+        </activity>
+        <activity
+            android:name="com.dr.JobDetailsActivity"
+            android:label="@string/title_activity_job_details" >
+        </activity>
+        <activity
+            android:name="com.dr.JobApplicationSummaryActivity"
+            android:label="@string/title_activity_job_application_summary" >
+        </activity>
+        <activity
+            android:name="com.dr.JobApplicationsListActivity"
+            android:label="@string/title_activity_job_applications_list" >
+        </activity>
+        <activity
+            android:name="com.dr.EditViewResumeActivity"
+            android:label="@string/title_activity_edit_view_resume" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateProfileActivity"
+            android:label="@string/title_activity_edit_create_profile" >
+        </activity>
+        <activity
+            android:name="com.dr.RecommendedJobsActivity"
+            android:label="@string/title_activity_recommended_jobs" >
+        </activity>
+        <activity
+            android:name="com.dr.ListInterviewsActivity"
+            android:label="@string/title_activity_list_interviews" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateProfileWorkExActivity"
+            android:label="@string/title_activity_edit_create_profile_work_ex" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateProfileSkillsActivity"
+            android:label="@string/title_activity_edit_create_profile_skills" >
+        </activity>
+        <activity
+            android:name="com.dr.InterviewDetailsActivity"
+            android:label="@string/title_activity_interview_details" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateInterviewActivity"
+            android:label="@string/title_activity_edit_create_interview" >
+        </activity>
+        <activity
+            android:name="com.dr.UploadResumeActivity"
+            android:label="@string/title_activity_upload_resume" >
+        </activity>
+        <activity
+            android:name="com.dr.ViewProfileActivity"
+            android:label="@string/title_activity_view_profile" >
+        </activity>
+        <activity
+            android:name="com.dr.SearchJobsActivity"
+            android:label="@string/title_activity_search_jobs" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateJobActivity"
+            android:label="@string/title_activity_edit_create_job" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateProfileProjectsActivity"
+            android:label="@string/title_activity_edit_create_profile_projects" >
+        </activity>
+        <activity
+            android:name="com.dr.InterviewsListActivity"
+            android:label="@string/title_activity_interviews_list" >
         </activity>
     </application>
 

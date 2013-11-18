@@ -4,7 +4,7 @@
     <string name="app_name">Job Hunt Management System</string>
     <string name="action_settings">Settings</string>
     <string name="desc">Placeholder for mandatory string</string>
-    
+
     <color name="buttonText">#666666</color>
 
     <string name="applications">APPLICATIONS</string>
@@ -13,4 +13,24 @@
     <string name="search">SEARCH JOBS</string>
     <string name="profile">PROFILE</string>
     <string name="documents">DOCUMENTS</string>
+    <string name="title_activity_add_job">AddJobActivity</string>
+    <string name="title_activity_job_details">JobDetailsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_job_application_summary">JobApplicationSummaryActivity</string>
+    <string name="title_activity_job_applications_list">JobApplicationsListActivity</string>
+    <string name="title_activity_edit_view_resume">EditViewResumeActivity</string>
+    <string name="title_activity_edit_create_profile">EditCreateProfileActivity</string>
+    <string name="title_activity_recommended_jobs">RecommendedJobsActivity</string>
+    <string name="title_activity_list_interviews">ListInterviewsActivity</string>
+    <string name="title_activity_edit_create_profile_work_ex">EditCreateProfileWorkExActivity</string>
+    <string name="title_activity_edit_create_profile_skills">EditCreateProfileSkillsActivity</string>
+    <string name="title_activity_interview_details">InterviewDetailsActivity</string>
+    <string name="title_activity_edit_create_interview">EditCreateInterviewActivity</string>
+    <string name="title_activity_upload_resume">UploadResumeActivity</string>
+    <string name="title_activity_view_profile">ViewProfileActivity</string>
+    <string name="title_activity_search_jobs">SearchJobsActivity</string>
+    <string name="title_activity_edit_create_job">EditCreateJobActivity</string>
+    <string name="title_activity_edit_create_profile_projects">EditCreateProfileProjectsActivity</string>
+    <string name="title_activity_interviews_list">InterviewsListActivity</string>
+
 </resources>
