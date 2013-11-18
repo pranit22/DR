@@ -13,4 +13,12 @@ public class Document {
     public int getId() {
 	return this.id;
     }
+
+    @Override
+    public String toString()
+    {
+	return "Document [id=" + id + "]";
+    }
+    
+    
 }

@@ -40,6 +40,12 @@ public class JobApplication {
     {
         this.coverLetter = coverLetter;
     }
+    @Override
+    public String toString()
+    {
+	return "JobApplication [job=" + job + ", status=" + status
+		+ ", resume=" + resume + ", coverLetter=" + coverLetter + "]";
+    }
     
     
 }

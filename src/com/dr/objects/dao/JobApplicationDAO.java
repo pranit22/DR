@@ -36,9 +36,9 @@ public class JobApplicationDAO
 	    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " 
 	    + COMPANY + " TEXT, "
 	    + TITLE + " TEXT, "
-	    + DESCRIPTION + " TEXT"
-	    + STATUS + " TEXT"
-	    + RESUME + " INTEGER"
+	    + DESCRIPTION + " TEXT, "
+	    + STATUS + " TEXT, "
+	    + RESUME + " INTEGER, "
 	    + COVER_LETTER + " INTEGER"
 	    + ")";
 
@@ -129,13 +129,14 @@ public class JobApplicationDAO
 	Job job = new Job();
 	job.setJobId(cursor.getInt(0));
 	job.setCompany(cursor.getString(1));
-	job.setDescription(cursor.getString(2));
+	job.setTitle(cursor.getString(2));
+	job.setDescription(cursor.getString(3));
 	
 	JobApplication jobApplication = new JobApplication();
 	jobApplication.setJob(job);
-	jobApplication.setStatus(Status.valueOf(cursor.getString(3)));
-	jobApplication.setResume(new Resume(cursor.getInt(4)));
-	jobApplication.setCoverLetter(new CoverLetter(cursor.getInt(4)));
+	jobApplication.setStatus(Status.valueOf(cursor.getString(4)));
+	jobApplication.setResume(new Resume(cursor.getInt(5)));
+	jobApplication.setCoverLetter(new CoverLetter(cursor.getInt(6)));
 	
 	return jobApplication;
     }

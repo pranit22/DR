@@ -47,4 +47,11 @@ public class Job
 	this.description = description;
     }
 
+    @Override
+    public String toString()
+    {
+	return "Job [jobId=" + jobId + ", company=" + company + ", title="
+		+ title + ", description=" + description + "]";
+    }
+
 }
