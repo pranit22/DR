@@ -4,6 +4,7 @@ public class Job
 {
     private int jobId;
     private String company;
+    private String title;
     private String description;
 
     public int getJobId()
@@ -26,6 +27,16 @@ public class Job
 	this.company = company;
     }
 
+    public String getTitle()
+    {
+	return title;
+    }
+
+    public void setTitle(String title)
+    {
+	this.title = title;
+    }
+    
     public String getDescription()
     {
 	return description;

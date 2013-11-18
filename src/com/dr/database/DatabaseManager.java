@@ -1,6 +1,6 @@
 package com.dr.database;
 
-import com.dr.objects.dao.JobDAO;
+import com.dr.objects.dao.JobApplicationDAO;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,7 +19,7 @@ public class DatabaseManager extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-	db.execSQL(JobDAO.CREATE_TABLE);
+	db.execSQL(JobApplicationDAO.CREATE_TABLE);
     }
 
     @Override
