@@ -17,13 +17,8 @@
         <activity android:name="com.dr.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.dr.AddJobActivity"
-            android:label="@string/title_activity_add_job" >
         </activity>
         <activity
             android:name="com.dr.JobDetailsActivity"
@@ -48,10 +43,6 @@
         <activity
             android:name="com.dr.RecommendedJobsActivity"
             android:label="@string/title_activity_recommended_jobs" >
-        </activity>
-        <activity
-            android:name="com.dr.ListInterviewsActivity"
-            android:label="@string/title_activity_list_interviews" >
         </activity>
         <activity
             android:name="com.dr.EditCreateProfileWorkExActivity"
