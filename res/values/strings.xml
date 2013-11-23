@@ -8,6 +8,7 @@
     <color name="buttonText">#666666</color>
 
     <string name="applications">APPLICATIONS</string>
+    <string name="new_application">NEW APPLICATION</string>
     <string name="events">EVENTS</string>
     <string name="interviews">INTERVIEWS</string>
     <string name="search">SEARCH JOBS</string>
@@ -32,5 +33,15 @@
     <string name="title_activity_edit_create_job">EditCreateJobActivity</string>
     <string name="title_activity_edit_create_profile_projects">EditCreateProfileProjectsActivity</string>
     <string name="title_activity_interviews_list">InterviewsListActivity</string>
+
+
+    <string-array name="status">
+        <item>Applied</item>
+        <item>Interview Scheduled</item>
+        <item>Rejected</item>
+        <item>Selected</item>
+        <item>Accepted</item>
+        <item>Ignored</item>
+    </string-array>
 
 </resources>

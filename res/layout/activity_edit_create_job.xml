@@ -1,16 +1,99 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".EditCreateJobActivity" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_height="100dp"
+        android:layout_width="match_parent">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/dream_track" />
+    </LinearLayout>
+
+    <ScrollView
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_width="match_parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <TextView
+                style="@style/fieldName"
+                android:text="Company" />
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/company"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Title" />
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/title"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Description" />
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/description"
+                android:lines="4"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Status"/>
+
+            <Spinner
+                style="@style/field"
+                android:id="@+id/status"
+                android:entries="@array/status"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Resume" />
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/resume"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Cover Letter" />
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/cover_letter"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/cancel"
+                    android:text="Cancel"/>
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/submit"
+                    android:text="Submit"
+                    android:onClick="submitCreateNewJob"/>
+
+                </LinearLayout>
+
+
+        </LinearLayout>
+        </ScrollView>
+
+
+</LinearLayout>

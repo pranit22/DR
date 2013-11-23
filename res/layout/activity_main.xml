@@ -18,7 +18,8 @@
     <Button
         style="@style/MainButton"
         android:text="@string/applications"
-        android:drawableLeft="@drawable/applications" />
+        android:drawableLeft="@drawable/applications"
+        android:onClick="navigateToListApplications"/>
 
     <Button
         style="@style/MainButton"
