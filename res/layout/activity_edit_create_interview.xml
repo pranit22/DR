@@ -1,16 +1,105 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".EditCreateInterviewActivity" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_height="100dp"
+        android:layout_width="match_parent">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/dream_track" />
+    </LinearLayout>
+
+    <ScrollView
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_width="match_parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <TextView
+                style="@style/fieldName"
+                android:text="Date" />
+
+            <DatePicker
+                style="@style/field"
+                android:id="@+id/date"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Time" />
+
+            <TimePicker
+                style="@style/field"
+                android:id="@+id/time"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Location" />
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/location" />
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Interviewer"/>
+
+            <EditText
+                style="@style/field"
+                android:id="@+id/interviewer"/>
+
+            <TextView
+                style="@style/fieldName"
+                android:text="Reminder" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/field"
+                android:text="No Reminders Set"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/reminder"/>
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/addEditReminder"
+                android:text="Add/Edit Reminder"
+                android:onClick="showAddEditReminderDialog"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/cancel"
+                    android:text="Cancel"
+                    android:onClick="navigateToJobDetailsActivity"/>
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/submit"
+                    android:text="Submit"
+                    android:onClick="submitCreateNewInterview"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

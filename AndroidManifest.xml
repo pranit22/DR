@@ -37,20 +37,8 @@
             android:label="@string/title_activity_edit_view_resume" >
         </activity>
         <activity
-            android:name="com.dr.EditCreateProfileActivity"
-            android:label="@string/title_activity_edit_create_profile" >
-        </activity>
-        <activity
             android:name="com.dr.RecommendedJobsActivity"
             android:label="@string/title_activity_recommended_jobs" >
-        </activity>
-        <activity
-            android:name="com.dr.EditCreateProfileWorkExActivity"
-            android:label="@string/title_activity_edit_create_profile_work_ex" >
-        </activity>
-        <activity
-            android:name="com.dr.EditCreateProfileSkillsActivity"
-            android:label="@string/title_activity_edit_create_profile_skills" >
         </activity>
         <activity
             android:name="com.dr.InterviewDetailsActivity"
@@ -77,13 +65,11 @@
             android:label="@string/title_activity_edit_create_job" >
         </activity>
         <activity
-            android:name="com.dr.EditCreateProfileProjectsActivity"
-            android:label="@string/title_activity_edit_create_profile_projects" >
-        </activity>
-        <activity
             android:name="com.dr.InterviewsListActivity"
             android:label="@string/title_activity_interviews_list" >
         </activity>
+
+        <service android:name=".NotificationService" />
     </application>
 
 </manifest>
