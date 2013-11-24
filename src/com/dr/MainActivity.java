@@ -55,7 +55,9 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, JobApplicationsListActivity.class));
     }
 
-
+    public void navigateToListInterviews(View view) {
+        startActivity(new Intent(this, InterviewsListActivity.class));
+    }
 
 }
 

@@ -24,7 +24,8 @@
     <Button
         style="@style/MainButton"
         android:text="@string/interviews"
-        android:drawableLeft="@drawable/interviews" />
+        android:drawableLeft="@drawable/interviews"
+        android:onClick="navigateToListInterviews"/>
 
     <Button
         style="@style/MainButton"
