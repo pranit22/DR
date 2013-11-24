@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dr.objects.CoverLetter;
@@ -19,8 +22,8 @@ import java.util.List;
 
 public class EditCreateJobActivity extends Activity {
 
-    List<JobApplication> jobs;
     private JobApplicationDAO jobApplicationDAO;
+    JobApplication jobApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,44 @@ public class EditCreateJobActivity extends Activity {
 
         jobApplicationDAO = new JobApplicationDAO(this);
         jobApplicationDAO.open();
+
+        Intent intent = getIntent();
+        if(intent.hasExtra("jobApplication")) {
+            jobApplication = (JobApplication) intent.getSerializableExtra("jobApplication");
+
+            ((EditText)findViewById(R.id.company)).setText(jobApplication.getJob().getCompany());
+            ((EditText)findViewById(R.id.title)).setText(jobApplication.getJob().getTitle());
+            ((EditText)findViewById(R.id.description)).setText(jobApplication.getJob().getDescription());
+
+            Spinner spinner = (Spinner) findViewById(R.id.status);
+            ArrayAdapter adapter = (ArrayAdapter) spinner.getAdapter();
+            int position = adapter.getPosition(jobApplication.getStatus().getValue());
+            spinner.setSelection(position);
+
+            ((EditText)findViewById(R.id.resume)).setText(Integer.toString(jobApplication.getResume().getId()));
+            ((EditText)findViewById(R.id.cover_letter)).setText(Integer.toString(jobApplication.getCoverLetter().getId()));
+
+            Button button = (Button) findViewById(R.id.submit);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    jobApplication.getJob().setCompany(((EditText)findViewById(R.id.company)).getText().toString());
+                    jobApplication.getJob().setTitle(((EditText)findViewById(R.id.title)).getText().toString());
+                    jobApplication.getJob().setDescription(((EditText)findViewById(R.id.description)).getText().toString());
+                    jobApplication.setResume(new Resume(1));
+                    jobApplication.setCoverLetter(new CoverLetter(2));
+                    jobApplication.setStatus(Status.toStatus(((Spinner) findViewById(R.id.status)).getSelectedItem().toString()));
+
+                    jobApplication = jobApplicationDAO.updateJobApplication(jobApplication);
+                    String message = "Job " + jobApplication.getJob().getJobId() + " updated successfully!";
+                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(getApplicationContext(), JobDetailsActivity.class);
+                    intent.putExtra("jobApplication", jobApplication);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 
     public void submitCreateNewJob(View view) {
