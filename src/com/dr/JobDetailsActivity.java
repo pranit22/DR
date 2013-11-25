@@ -41,7 +41,7 @@ public class JobDetailsActivity extends Activity {
 
     public void navigateToListInterviews(View view) {
         Intent intent = new Intent(this, InterviewsListActivity.class);
-        intent.putExtra("jobId", jobApplication.getJob().getJobId());
+        intent.putExtra("jobApplication", jobApplication);
         startActivity(intent);
     }
 

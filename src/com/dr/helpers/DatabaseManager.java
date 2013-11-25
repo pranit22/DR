@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.dr.objects.dao.InterviewDAO;
 import com.dr.objects.dao.JobApplicationDAO;
 
 public class DatabaseManager extends SQLiteOpenHelper {
@@ -17,10 +18,13 @@ public class DatabaseManager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(JobApplicationDAO.CREATE_TABLE);
+        db.execSQL(InterviewDAO.CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL(JobApplicationDAO.CREATE_TABLE);
+        db.execSQL(InterviewDAO.CREATE_TABLE);
     }
 
 }

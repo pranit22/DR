@@ -45,8 +45,7 @@ public class JobApplicationsListActivity extends Activity {
 
         private ArrayList<JobApplication> items;
 
-        public JobApplicationListAdapter(Context context,
-                                         int textViewResourceId, ArrayList<JobApplication> items) {
+        public JobApplicationListAdapter(Context context, int textViewResourceId, ArrayList<JobApplication> items) {
             super(context, textViewResourceId, items);
             this.items = items;
         }

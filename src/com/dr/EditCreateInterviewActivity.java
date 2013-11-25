@@ -45,7 +45,7 @@ public class EditCreateInterviewActivity extends Activity {
         startActivity(intent);
     }
 
-    private void submitCreateNewInterview(View view) {
+    public void submitCreateNewInterview(View view) {
         updateInterviewFromForm();
         interview = interviewDAO.addInterview(interview);
         Intent intent = new Intent(this, InterviewDetailsActivity.class);

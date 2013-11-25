@@ -5,6 +5,7 @@ import android.widget.TimePicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Pranit on 11/25/13.
@@ -33,7 +34,11 @@ public class Utilities {
 
     public static String printDateTime(Calendar calendar) {
         SimpleDateFormat format = new SimpleDateFormat("E, MMM d, HH:mma");
-        return format.format(calendar.getTime());
+        try {
+            return format.format(calendar.getTime());
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public static String printDate(Calendar calendar) {
@@ -44,5 +49,11 @@ public class Utilities {
     public static String printTime(Calendar calendar) {
         SimpleDateFormat format = new SimpleDateFormat("HH:mma");
         return format.format(calendar.getTime());
+    }
+
+    public static String getStringFromCalendar(Calendar calendar) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = calendar.getTime();
+        return sdf.format(date);
     }
 }

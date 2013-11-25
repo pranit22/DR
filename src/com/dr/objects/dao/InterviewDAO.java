@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dr.helpers.DatabaseManager;
+import com.dr.helpers.Utilities;
 import com.dr.objects.Interview;
 
 import java.text.ParseException;
@@ -66,36 +67,23 @@ public class InterviewDAO {
         return interview;
     }
 
-    public Interview addInterview(Interview interview) {
-        ContentValues values = new ContentValues();
-        values.put(JOB_ID, interview.getJobId());
-        values.put(TIME, getStringFromCalendar(interview.getTime()));
-        values.put(LOCATION, interview.getLocation());
-        values.put(INTERVIEWER, interview.getInterviewer());
-        values.put(REMINDER, getStringFromCalendar(interview.getReminder()));
+    public List<Interview> getAllInterviewsByJobId(int jobId) {
+        List<Interview> interviews = new ArrayList<Interview>();
 
-        int insertId = (int) database.insert(TABLE_INTERVIEW, null, values);
-        return getInterviewById(insertId);
+        String selection = JOB_ID + " = " + jobId;
+        Cursor cursor = database.query(TABLE_INTERVIEW, allColumns, selection, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Interview interview = cursorToInterview(cursor);
+            interviews.add(interview);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return interviews;
     }
 
-    public Interview updateInterview(Interview interview) {
-        ContentValues values = new ContentValues();
-        values.put(JOB_ID, interview.getJobId());
-        values.put(TIME, getStringFromCalendar(interview.getTime()));
-        values.put(LOCATION, interview.getLocation());
-        values.put(INTERVIEWER, interview.getInterviewer());
-        values.put(REMINDER, getStringFromCalendar(interview.getReminder()));
-
-        database.update(TABLE_INTERVIEW, values, ID + " = " + interview.getId(), null);
-        return getInterviewById(interview.getId());
-    }
-
-    public void deleteInterview(Interview interview) {
-        int id = interview.getId();
-        database.delete(TABLE_INTERVIEW, ID + " = " + id, null);
-    }
-
-    public List<Interview> getAllInterviewsByJobId() {
+    public List<Interview> getAllInterviews() {
         List<Interview> interviews = new ArrayList<Interview>();
 
         Cursor cursor = database.query(TABLE_INTERVIEW, allColumns, null, null, null,
@@ -103,12 +91,45 @@ public class InterviewDAO {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Interview interview  = cursorToInterview(cursor);
+            Interview interview = cursorToInterview(cursor);
             interviews.add(interview);
             cursor.moveToNext();
         }
         cursor.close();
         return interviews;
+    }
+
+
+    public Interview addInterview(Interview interview) {
+        ContentValues values = new ContentValues();
+        values.put(JOB_ID, interview.getJobId());
+        values.put(TIME, Utilities.getStringFromCalendar(interview.getTime()));
+        values.put(LOCATION, interview.getLocation());
+        values.put(INTERVIEWER, interview.getInterviewer());
+        if(interview.getReminder() != null) {
+            values.put(REMINDER, Utilities.getStringFromCalendar(interview.getReminder()));
+        }
+        
+        int insertId = (int) database.insert(TABLE_INTERVIEW, null, values);
+        return getInterviewById(insertId);
+    }
+
+    public Interview updateInterview(Interview interview) {
+        ContentValues values = new ContentValues();
+        values.put(JOB_ID, interview.getJobId());
+        values.put(TIME, Utilities.getStringFromCalendar(interview.getTime()));
+        values.put(LOCATION, interview.getLocation());
+        values.put(INTERVIEWER, interview.getInterviewer());
+        values.put(REMINDER, Utilities.getStringFromCalendar(interview.getReminder()));
+
+        database.update(TABLE_INTERVIEW, values, ID + " = " + interview.getId(), null);
+        return getInterviewById(interview.getId());
+    }
+
+
+    public void deleteInterview(Interview interview) {
+        int id = interview.getId();
+        database.delete(TABLE_INTERVIEW, ID + " = " + id, null);
     }
 
     private Interview cursorToInterview(Cursor cursor) {
@@ -132,16 +153,11 @@ public class InterviewDAO {
             date = sdf.parse(string);
             calendar = new GregorianCalendar();
             calendar.setTime(date);
-        }
-        catch (ParseException e) {
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return calendar;
-    }
-
-    private String getStringFromCalendar(Calendar calendar) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = calendar.getTime();
-        return sdf.format(date);
     }
 }

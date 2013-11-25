@@ -23,7 +23,8 @@ public class InterviewDetailsActivity extends Activity {
         ((TextView) findViewById(R.id.time)).setText(Utilities.printTime(interview.getTime()));
         ((TextView)findViewById(R.id.interviewer)).setText(interview.getInterviewer());
         ((TextView)findViewById(R.id.location)).setText(interview.getLocation());
-        ((TextView)findViewById(R.id.reminder)).setText(Utilities.printDateTime(interview.getReminder()));
+        String reminder = Utilities.printDateTime(interview.getReminder());
+        ((TextView)findViewById(R.id.reminder)).setText(reminder);
     }
 
 }
