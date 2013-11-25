@@ -20,6 +20,7 @@ public class InterviewsListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interviews_list);
 
+        /*
         Intent intent = new Intent(this, NotificationService.class);
         PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, 0);
 
@@ -30,7 +31,7 @@ public class InterviewsListActivity extends Activity {
         manager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
 
         Toast.makeText(this, "Start Alarm", Toast.LENGTH_SHORT).show();
-
+        */
     }
 
 

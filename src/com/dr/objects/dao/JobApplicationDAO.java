@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dr.database.DatabaseManager;
+import com.dr.helpers.DatabaseManager;
 import com.dr.objects.CoverLetter;
 import com.dr.objects.Job;
 import com.dr.objects.JobApplication;

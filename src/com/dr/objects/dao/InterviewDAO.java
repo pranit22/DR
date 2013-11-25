@@ -6,13 +6,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dr.database.DatabaseManager;
-import com.dr.objects.CoverLetter;
+import com.dr.helpers.DatabaseManager;
 import com.dr.objects.Interview;
-import com.dr.objects.Job;
-import com.dr.objects.JobApplication;
-import com.dr.objects.Resume;
-import com.dr.objects.Status;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

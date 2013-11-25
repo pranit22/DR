@@ -70,6 +70,13 @@
                 style="@style/field"
                 android:id="@+id/cover_letter"/>
 
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/cancel"
+                android:text="Interviews"
+                android:onClick="navigateToListInterviews"/>
+
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
@@ -81,6 +88,7 @@
                     android:id="@+id/cancel"
                     android:text="Back"
                     android:onClick="navigateToListApplications"/>
+
                 <Button
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"

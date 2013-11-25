@@ -1,11 +1,12 @@
 package com.dr.objects;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by Pranit on 11/23/13.
  */
-public class Interview {
+public class Interview implements Serializable {
     private int id;
     private int jobId;
     private Calendar time;

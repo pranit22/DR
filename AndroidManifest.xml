@@ -25,20 +25,8 @@
             android:label="@string/title_activity_job_details" >
         </activity>
         <activity
-            android:name="com.dr.JobApplicationSummaryActivity"
-            android:label="@string/title_activity_job_application_summary" >
-        </activity>
-        <activity
             android:name="com.dr.JobApplicationsListActivity"
             android:label="@string/title_activity_job_applications_list" >
-        </activity>
-        <activity
-            android:name="com.dr.EditViewResumeActivity"
-            android:label="@string/title_activity_edit_view_resume" >
-        </activity>
-        <activity
-            android:name="com.dr.RecommendedJobsActivity"
-            android:label="@string/title_activity_recommended_jobs" >
         </activity>
         <activity
             android:name="com.dr.InterviewDetailsActivity"
@@ -49,24 +37,16 @@
             android:label="@string/title_activity_edit_create_interview" >
         </activity>
         <activity
-            android:name="com.dr.UploadResumeActivity"
-            android:label="@string/title_activity_upload_resume" >
-        </activity>
-        <activity
-            android:name="com.dr.ViewProfileActivity"
-            android:label="@string/title_activity_view_profile" >
-        </activity>
-        <activity
-            android:name="com.dr.SearchJobsActivity"
-            android:label="@string/title_activity_search_jobs" >
-        </activity>
-        <activity
             android:name="com.dr.EditCreateJobActivity"
             android:label="@string/title_activity_edit_create_job" >
         </activity>
         <activity
             android:name="com.dr.InterviewsListActivity"
             android:label="@string/title_activity_interviews_list" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateReminderActivity"
+            android:label="@string/title_activity_edit_create_reminder" >
         </activity>
 
         <service android:name=".NotificationService" />

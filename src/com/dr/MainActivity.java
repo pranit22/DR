@@ -31,8 +31,6 @@ public class MainActivity extends Activity {
 
         jobApplicationDAO = new JobApplicationDAO(this);
         jobApplicationDAO.open();
-
-        startActivity(new Intent(this, EditCreateInterviewActivity.class));
     }
 
     public void addJob() {

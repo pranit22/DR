@@ -33,6 +33,7 @@
     <string name="title_activity_edit_create_job">EditCreateJobActivity</string>
     <string name="title_activity_edit_create_profile_projects">EditCreateProfileProjectsActivity</string>
     <string name="title_activity_interviews_list">InterviewsListActivity</string>
+    <string name="title_activity_edit_create_reminder">EditCreateReminderActivity</string>
 
 
     <string-array name="status">

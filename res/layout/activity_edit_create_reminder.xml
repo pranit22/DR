@@ -26,7 +26,7 @@
                 style="@style/fieldName"
                 android:text="Date" />
 
-            <TextView
+            <DatePicker
                 style="@style/field"
                 android:id="@+id/date"/>
 
@@ -34,33 +34,10 @@
                 style="@style/fieldName"
                 android:text="Time" />
 
-            <TextView
+            <TimePicker
                 style="@style/field"
                 android:id="@+id/time"/>
 
-            <TextView
-                style="@style/fieldName"
-                android:text="Interviewer" />
-
-            <TextView
-                style="@style/field"
-                android:id="@+id/interviewer"/>
-
-            <TextView
-                style="@style/fieldName"
-                android:text="Location"/>
-
-            <TextView
-                style="@style/field"
-                android:id="@+id/location"/>
-
-            <TextView
-                style="@style/fieldName"
-                android:text="Reminder" />
-
-            <TextView
-                style="@style/field"
-                android:id="@+id/reminder"/>
 
             <LinearLayout
                 android:layout_height="wrap_content"
@@ -71,15 +48,14 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:id="@+id/cancel"
-                    android:text="Back"
-                    android:onClick="navigateToListApplications"/>
-
+                    android:text="Cancel"
+                    android:onClick="navigateToEditCreateInterviewActivity"/>
                 <Button
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:id="@+id/edit"
-                    android:text="Edit"
-                    android:onClick="navigateToEditApplication"/>
+                    android:id="@+id/submit"
+                    android:text="Submit"
+                    android:onClick="submitAddEditReminder"/>
 
             </LinearLayout>
 
