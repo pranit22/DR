@@ -3,6 +3,10 @@ package com.dr.helpers;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
+import com.dr.objects.Interview;
+import com.dr.objects.JobApplication;
+import com.dr.objects.dao.JobApplicationDAO;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

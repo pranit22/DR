@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.dr.helpers.Utilities;
@@ -30,11 +31,18 @@ public class EditCreateInterviewActivity extends Activity {
 
         Intent intent = getIntent();
         interview = (Interview) intent.getSerializableExtra("interview");
-        Calendar calendar = interview.getTime();
-        if (calendar != null) {
+        Calendar time = interview.getTime();
+        if (time != null) {
             DatePicker datePicker = (DatePicker) findViewById(R.id.date);
             TimePicker timePicker = (TimePicker) findViewById(R.id.time);
-            Utilities.setDateTimePickerFromCalendar(datePicker, timePicker, calendar);
+            Utilities.setDateTimePickerFromCalendar(datePicker, timePicker, time);
+        }
+        ((EditText) findViewById(R.id.location)).setText(interview.getLocation());
+        ((EditText) findViewById(R.id.interviewer)).setText(interview.getInterviewer());
+
+        Calendar reminder = interview.getReminder();
+        if (reminder != null) {
+            ((TextView) findViewById(R.id.reminder)).setText(Utilities.printDateTime(interview.getReminder()));
         }
     }
 
@@ -47,10 +55,19 @@ public class EditCreateInterviewActivity extends Activity {
 
     public void submitCreateNewInterview(View view) {
         updateInterviewFromForm();
-        interview = interviewDAO.addInterview(interview);
+        if (interview.getId() == 0) {
+            interview = interviewDAO.addInterview(interview);
+        } else {
+            interview = interviewDAO.updateInterview(interview);
+        }
         Intent intent = new Intent(this, InterviewDetailsActivity.class);
+        intent.putExtra("landingActivity", InterviewsListActivity.class);
         intent.putExtra("interview", interview);
         startActivity(intent);
+    }
+
+    public void navigateToListInterviews(View view) {
+        finish();
     }
 
     private void updateInterviewFromForm() {
@@ -60,4 +77,5 @@ public class EditCreateInterviewActivity extends Activity {
         interview.setInterviewer(((EditText) findViewById(R.id.interviewer)).getText().toString());
         interview.setLocation(((EditText) findViewById(R.id.location)).getText().toString());
     }
+
 }

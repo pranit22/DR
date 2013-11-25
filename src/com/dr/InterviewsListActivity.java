@@ -51,6 +51,10 @@ public class InterviewsListActivity extends Activity {
         interviews = interviewDAO.getAllInterviewsByJobId(jobApplication.getJob().getJobId());
 
         ListView listView = (ListView) findViewById(R.id.listView);
+        InterviewListAdapter adapter = new InterviewListAdapter(this,
+                R.layout.layout_interview,
+                (ArrayList<Interview>) interviews);
+        listView.setAdapter(adapter);
 
     }
 
@@ -76,7 +80,7 @@ public class InterviewsListActivity extends Activity {
             View v = convertView;
             if (v == null) {
                 LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                v = vi.inflate(R.layout.layout_job_application, null);
+                v = vi.inflate(R.layout.layout_interview, null);
             }
             final Interview o = items.get(position);
             if (o != null) {
@@ -98,6 +102,7 @@ public class InterviewsListActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(context, InterviewDetailsActivity.class);
+                        intent.putExtra("landingActivity", InterviewsListActivity.class);
                         intent.putExtra("interview", o);
                         startActivity(intent);
                     }

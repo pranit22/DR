@@ -3,10 +3,15 @@ package com.dr;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.dr.helpers.Utilities;
 import com.dr.objects.Interview;
+import com.dr.objects.JobApplication;
+import com.dr.objects.dao.JobApplicationDAO;
+
+import java.util.List;
 
 public class InterviewDetailsActivity extends Activity {
 
@@ -27,4 +32,24 @@ public class InterviewDetailsActivity extends Activity {
         ((TextView)findViewById(R.id.reminder)).setText(reminder);
     }
 
+    public void navigateToListInterviews(View view) {
+        Intent intent = new Intent(this, (Class) getIntent().getSerializableExtra("landingActivity"));
+
+        JobApplicationDAO jobApplicationDAO = new JobApplicationDAO(this);
+        jobApplicationDAO.open();
+        List<JobApplication> jobApplications = jobApplicationDAO.getAllJobApplications();
+        for(JobApplication jobApplication : jobApplications) {
+            if(jobApplication.getJob().getJobId() == interview.getJobId()) {
+                intent.putExtra("jobApplication", jobApplication);
+                break;
+            }
+        }
+        startActivity(intent);
+    }
+
+    public void navigateToEditInterview(View view) {
+        Intent intent = new Intent(this, EditCreateInterviewActivity.class);
+        intent.putExtra("interview", interview);
+        startActivity(intent);
+    }
 }

@@ -72,14 +72,14 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/cancel"
                     android:text="Back"
-                    android:onClick="navigateToListApplications"/>
+                    android:onClick="navigateToListInterviews"/>
 
                 <Button
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:id="@+id/edit"
                     android:text="Edit"
-                    android:onClick="navigateToEditApplication"/>
+                    android:onClick="navigateToEditInterview"/>
 
             </LinearLayout>
 
