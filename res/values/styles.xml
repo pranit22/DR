@@ -55,18 +55,17 @@
         <item name="android:padding">5dp</item>
     </style>
 
-    <style name="field">
+    <style name="field" parent="editField">
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="editField">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">18sp</item>
         <item name="android:typeface">sans</item>
         <item name="android:color">@color/buttonText</item>
         <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:padding">5dp</item>
-    </style>
-
-    <style name="editField">
-
     </style>
 
 

@@ -69,7 +69,7 @@ public class JobApplicationsListActivity extends Activity {
                     title.setText(o.getJob().getTitle());
                 }
                 if (status != null) {
-                    status.setText(o.getStatus().toString());
+                    status.setText(o.getStatus().getValue());
                 }
                 final Context context = getApplicationContext();
                 v.setOnClickListener(new OnClickListener() {

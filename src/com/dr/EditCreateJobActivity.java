@@ -46,8 +46,8 @@ public class EditCreateJobActivity extends Activity {
             int position = adapter.getPosition(jobApplication.getStatus().getValue());
             spinner.setSelection(position);
 
-            ((EditText)findViewById(R.id.resume)).setText(Integer.toString(jobApplication.getResume().getId()));
-            ((EditText)findViewById(R.id.cover_letter)).setText(Integer.toString(jobApplication.getCoverLetter().getId()));
+            //((EditText)findViewById(R.id.resume)).setText(Integer.toString(jobApplication.getResume().getId()));
+            //((EditText)findViewById(R.id.cover_letter)).setText(Integer.toString(jobApplication.getCoverLetter().getId()));
 
             Button button = (Button) findViewById(R.id.submit);
             button.setOnClickListener(new View.OnClickListener() {

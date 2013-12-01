@@ -23,7 +23,7 @@
                 android:text="Company" />
 
             <EditText
-                style="@style/field"
+                style="@style/editField"
                 android:id="@+id/company" />
 
             <TextView
@@ -31,7 +31,7 @@
                 android:text="Title" />
 
             <EditText
-                style="@style/field"
+                style="@style/editField"
                 android:id="@+id/title" />
 
             <TextView
@@ -39,16 +39,17 @@
                 android:text="Description" />
 
             <EditText
-                style="@style/field"
+                style="@style/editField"
                 android:id="@+id/description"
-                android:lines="4" />
+                android:lines="4"
+                android:gravity="left"/>
 
             <TextView
                 style="@style/fieldName"
                 android:text="Status" />
 
             <Spinner
-                style="@style/field"
+                style="@style/editField"
                 android:id="@+id/status"
                 android:entries="@array/status" />
 
@@ -56,16 +57,16 @@
                 style="@style/fieldName"
                 android:text="Resume" />
 
-            <EditText
-                style="@style/field"
+            <Spinner
+                style="@style/editField"
                 android:id="@+id/resume" />
 
             <TextView
                 style="@style/fieldName"
                 android:text="Cover Letter" />
 
-            <EditText
-                style="@style/field"
+            <Spinner
+                style="@style/editField"
                 android:id="@+id/cover_letter" />
         </LinearLayout>
     </ScrollView>
