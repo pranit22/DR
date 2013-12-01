@@ -34,11 +34,13 @@
         </activity>
         <activity
             android:name="com.dr.EditCreateInterviewActivity"
-            android:label="@string/title_activity_edit_create_interview" >
+            android:label="@string/title_activity_edit_create_interview"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name="com.dr.EditCreateJobActivity"
-            android:label="@string/title_activity_edit_create_job" >
+            android:label="@string/title_activity_edit_create_job"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name="com.dr.InterviewsListActivity"
@@ -46,7 +48,8 @@
         </activity>
         <activity
             android:name="com.dr.EditCreateReminderActivity"
-            android:label="@string/title_activity_edit_create_reminder" >
+            android:label="@string/title_activity_edit_create_reminder"
+            android:windowSoftInputMode="stateHidden">
         </activity>
 
         <service android:name=".NotificationService" />

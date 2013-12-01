@@ -1,34 +1,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track" />
-    </LinearLayout>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="ADD/EDIT JOB APPLICATION" />
 
     <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical">
+
             <TextView
                 style="@style/fieldName"
                 android:text="Company" />
 
             <EditText
                 style="@style/field"
-                android:id="@+id/company"/>
+                android:id="@+id/company" />
 
             <TextView
                 style="@style/fieldName"
@@ -36,7 +32,7 @@
 
             <EditText
                 style="@style/field"
-                android:id="@+id/title"/>
+                android:id="@+id/title" />
 
             <TextView
                 style="@style/fieldName"
@@ -45,16 +41,16 @@
             <EditText
                 style="@style/field"
                 android:id="@+id/description"
-                android:lines="4"/>
+                android:lines="4" />
 
             <TextView
                 style="@style/fieldName"
-                android:text="Status"/>
+                android:text="Status" />
 
             <Spinner
                 style="@style/field"
                 android:id="@+id/status"
-                android:entries="@array/status"/>
+                android:entries="@array/status" />
 
             <TextView
                 style="@style/fieldName"
@@ -62,7 +58,7 @@
 
             <EditText
                 style="@style/field"
-                android:id="@+id/resume"/>
+                android:id="@+id/resume" />
 
             <TextView
                 style="@style/fieldName"
@@ -70,30 +66,29 @@
 
             <EditText
                 style="@style/field"
-                android:id="@+id/cover_letter"/>
-
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/cancel"
-                    android:text="Cancel"/>
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/submit"
-                    android:text="Submit"
-                    android:onClick="submitCreateNewJob"/>
-
-                </LinearLayout>
-
-
+                android:id="@+id/cover_letter" />
         </LinearLayout>
-        </ScrollView>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <Button
+            style="@style/SmallButton"
+            android:id="@+id/cancel"
+            android:text="CANCEL"
+            android:drawableLeft="@drawable/icon_arrow_left"
+            android:onClick="finishActivity"/>
+
+        <Button
+            style="@style/SmallButton"
+            android:id="@+id/submit"
+            android:text="SUBMIT"
+            android:drawableLeft="@drawable/tick"
+            android:onClick="submitCreateNewJob" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

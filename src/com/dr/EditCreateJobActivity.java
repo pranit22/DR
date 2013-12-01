@@ -90,4 +90,8 @@ public class EditCreateJobActivity extends Activity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, JobApplicationsListActivity.class));
     }
+
+    public void finishActivity(View view) {
+        finish();
+    }
 }

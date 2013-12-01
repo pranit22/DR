@@ -29,6 +29,11 @@
         <item name="android:color">@color/buttonText</item>
     </style>
 
+    <style name="SmallButton" parent="MainButton">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <style name="ScreenTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -43,22 +48,26 @@
     <style name="fieldName">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:typeface">sans</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:drawablePadding">10dp</item>
         <item name="android:color">@color/buttonText</item>
-        <item name="android:layout_weight">0</item>
+        <item name="android:background">#333333</item>
+        <item name="android:padding">5dp</item>
     </style>
 
     <style name="field">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:typeface">sans</item>
         <item name="android:color">@color/buttonText</item>
-        <item name="android:layout_weight">0</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:padding">5dp</item>
     </style>
+
+    <style name="editField">
+
+    </style>
+
 
 </resources>

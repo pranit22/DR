@@ -1,34 +1,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track" />
-    </LinearLayout>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="JOB APPLICATION DETAILS" />
 
     <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical">
+
             <TextView
                 style="@style/fieldName"
                 android:text="Company" />
 
             <TextView
                 style="@style/field"
-                android:id="@+id/company"/>
+                android:id="@+id/company" />
 
             <TextView
                 style="@style/fieldName"
@@ -36,7 +32,7 @@
 
             <TextView
                 style="@style/field"
-                android:id="@+id/title"/>
+                android:id="@+id/title" />
 
             <TextView
                 style="@style/fieldName"
@@ -44,15 +40,15 @@
 
             <TextView
                 style="@style/field"
-                android:id="@+id/description"/>
+                android:id="@+id/description" />
 
             <TextView
                 style="@style/fieldName"
-                android:text="Status"/>
+                android:text="Status" />
 
             <TextView
                 style="@style/field"
-                android:id="@+id/status"/>
+                android:id="@+id/status" />
 
             <TextView
                 style="@style/fieldName"
@@ -60,7 +56,7 @@
 
             <TextView
                 style="@style/field"
-                android:id="@+id/resume"/>
+                android:id="@+id/resume" />
 
             <TextView
                 style="@style/fieldName"
@@ -68,39 +64,41 @@
 
             <TextView
                 style="@style/field"
-                android:id="@+id/cover_letter"/>
-
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/cancel"
-                android:text="Interviews"
-                android:onClick="navigateToListInterviews"/>
-
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/cancel"
-                    android:text="Back"
-                    android:onClick="navigateToListApplications"/>
-
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/edit"
-                    android:text="Edit"
-                    android:onClick="navigateToEditApplication"/>
-
-            </LinearLayout>
-
-
+                android:id="@+id/cover_letter" />
         </LinearLayout>
+
     </ScrollView>
 
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/SmallButton"
+            android:drawableLeft="@drawable/interviews"
+            android:id="@+id/cancel"
+            android:text="INTERVIEWS FOR THIS JOB"
+            android:onClick="navigateToListInterviews" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <Button
+                style="@style/SmallButton"
+                android:drawableLeft="@drawable/icon_arrow_left"
+                android:id="@+id/cancel"
+                android:text="BACK"
+                android:onClick="navigateToListApplications" />
+
+            <Button
+                style="@style/SmallButton"
+                android:drawableLeft="@drawable/applications"
+                android:id="@+id/edit"
+                android:text="EDIT"
+                android:onClick="navigateToEditApplication" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
