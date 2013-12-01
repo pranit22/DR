@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
-import android.widget.Toast;
 
 /**
  * Created by Pranit on 11/23/13.
@@ -29,16 +28,16 @@ public class NotificationService extends Service {
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         Intent myIntent = new Intent(this, InterviewDetailsActivity.class);
+        myIntent.putExtra("interview", intent.getSerializableExtra("interview"));
+        myIntent.putExtra("landingActivity", InterviewsListActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, myIntent, 0);
 
         Notification mNotification = new Notification.Builder(this)
                 .setContentTitle("Upcoming Interview!")
-                .setContentText("With Amazon at 4:50pm")
+                .setContentText(intent.getStringExtra("message"))
                 .setSmallIcon(R.drawable.interviews)
                 .setContentIntent(pendingIntent)
                 .setSound(soundUri)
-                .addAction(R.drawable.interviews, "View", pendingIntent)
-                .addAction(0, "Remind", pendingIntent)
                 .build();
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
