@@ -108,9 +108,6 @@ public class InterviewDAO {
         values.put(INTERVIEWER, interview.getInterviewer());
         if(interview.getReminder() != null) {
             values.put(REMINDER, Utilities.getStringFromCalendar(interview.getReminder()));
-
-
-            
         }
         
         int insertId = (int) database.insert(TABLE_INTERVIEW, null, values);
