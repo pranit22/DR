@@ -1,105 +1,109 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track" />
-    </LinearLayout>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="ADD/EDIT INTERVIEW" />
 
     <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical">
+
             <TextView
                 style="@style/fieldName"
                 android:text="Date" />
 
             <DatePicker
-                style="@style/field"
-                android:id="@+id/date"/>
+                style="@style/editField"
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left" />
 
             <TextView
                 style="@style/fieldName"
                 android:text="Time" />
 
             <TimePicker
-                style="@style/field"
-                android:id="@+id/time"/>
+                style="@style/editField"
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left" />
 
             <TextView
                 style="@style/fieldName"
                 android:text="Location" />
 
             <EditText
-                style="@style/field"
+                style="@style/editField"
                 android:id="@+id/location" />
 
             <TextView
                 style="@style/fieldName"
-                android:text="Interviewer"/>
+                android:text="Interviewer" />
 
             <EditText
-                style="@style/field"
-                android:id="@+id/interviewer"/>
+                style="@style/editField"
+                android:id="@+id/interviewer" />
 
             <TextView
                 style="@style/fieldName"
                 android:text="Reminder" />
-
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                style="@style/field"
-                android:text="No Reminders Set"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:id="@+id/reminder"/>
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/addEditReminder"
-                android:text="Add/Edit Reminder"
-                android:onClick="navigateToAddEditReminder"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal">
 
+                <TextView
+                    style="@style/field"
+                    android:text="No Reminders Set"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/reminder" />
+
                 <Button
-                    android:layout_height="wrap_content"
+                    style="@style/MainButton"
                     android:layout_width="wrap_content"
-                    android:id="@+id/cancel"
-                    android:text="Cancel"
-                    android:onClick="navigateToListInterviews"/>
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/submit"
-                    android:text="Submit"
-                    android:onClick="submitCreateNewInterview"/>
+                    android:id="@+id/addEditReminder"
+                    android:text="Add/Edit Reminder"
+                    android:textSize="18sp"
+                    android:onClick="navigateToAddEditReminder" />
 
             </LinearLayout>
 
-
         </LinearLayout>
     </ScrollView>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/SmallButton"
+            android:id="@+id/cancel"
+            android:drawableLeft="@drawable/icon_arrow_left"
+            android:text="Cancel"
+            android:onClick="navigateToListInterviews" />
+
+        <Button
+            style="@style/SmallButton"
+            android:id="@+id/submit"
+            android:drawableLeft="@drawable/tick"
+            android:text="Submit"
+            android:onClick="submitCreateNewInterview" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -4,26 +4,27 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent"
-        android:layout_weight="1">
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track"/>
-    </LinearLayout>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="INTERVIEWS" />
 
+    <ListView android:id="@+id/listView"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:dividerHeight="2sp"
+        android:divider="@color/black"/>
 
     <Button
         style="@style/MainButton"
         android:text="NEW INTERVIEW"
-        android:drawableLeft="@drawable/interviews"
+        android:drawableLeft="@drawable/icon_add"
         android:onClick="navigateToNewInterview"/>
 
-    <ListView android:id="@+id/listView"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_width="match_parent"/>
 
+    <Button
+        style="@style/MainButton"
+        android:text="BACK TO JOB APPLICATION"
+        android:drawableLeft="@drawable/icon_arrow_left"
+        android:onClick="navigateToJobApplication"/>
 </LinearLayout>

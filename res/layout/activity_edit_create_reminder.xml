@@ -4,30 +4,28 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track" />
-    </LinearLayout>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="ADD/EDIT REMINDER" />
 
     <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical">
+
             <TextView
                 style="@style/fieldName"
                 android:text="Date" />
 
             <DatePicker
-                style="@style/field"
+                style="@style/editField"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
                 android:id="@+id/date"/>
 
             <TextView
@@ -35,7 +33,9 @@
                 android:text="Time" />
 
             <TimePicker
-                style="@style/field"
+                style="@style/editField"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
                 android:id="@+id/time"/>
 
 
@@ -45,16 +45,17 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    style="@style/SmallButton"
                     android:id="@+id/cancel"
                     android:text="Cancel"
+                    android:drawableLeft="@drawable/icon_arrow_left"
                     android:onClick="navigateToEditCreateInterviewActivity"/>
+
                 <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    style="@style/SmallButton"
                     android:id="@+id/submit"
                     android:text="Submit"
+                    android:drawableLeft="@drawable/tick"
                     android:onClick="submitAddEditReminder"/>
 
             </LinearLayout>

@@ -30,19 +30,6 @@ public class InterviewsListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interviews_list);
 
-        /*
-        Intent intent = new Intent(this, NotificationService.class);
-        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, 0);
-
-        AlarmManager manager=(AlarmManager)getSystemService(Activity.ALARM_SERVICE);
-
-        Calendar cal=Calendar.getInstance();
-        cal.add(Calendar.SECOND, 5);
-        manager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
-
-        Toast.makeText(this, "Start Alarm", Toast.LENGTH_SHORT).show();
-        */
-
         Intent intent = getIntent();
         jobApplication = (JobApplication) intent.getSerializableExtra("jobApplication");
 
@@ -63,6 +50,12 @@ public class InterviewsListActivity extends Activity {
         Interview interview = new Interview();
         interview.setJobId(jobApplication.getJob().getJobId());
         intent.putExtra("interview", interview);
+        startActivity(intent);
+    }
+
+    public void navigateToJobApplication(View view) {
+        Intent intent = new Intent(this, JobDetailsActivity.class);
+        intent.putExtra("jobApplication", jobApplication);
         startActivity(intent);
     }
 

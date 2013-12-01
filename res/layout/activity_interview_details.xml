@@ -4,24 +4,20 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track" />
-    </LinearLayout>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="INTERVIEW DETAILS" />
 
     <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical">
+
             <TextView
                 style="@style/fieldName"
                 android:text="Date" />
@@ -62,30 +58,28 @@
                 style="@style/field"
                 android:id="@+id/reminder"/>
 
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/cancel"
-                    android:text="Back"
-                    android:onClick="navigateToListInterviews"/>
-
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/edit"
-                    android:text="Edit"
-                    android:onClick="navigateToEditInterview"/>
-
-            </LinearLayout>
-
-
         </LinearLayout>
     </ScrollView>
 
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/SmallButton"
+            android:id="@+id/cancel"
+            android:text="Back"
+            android:drawableLeft="@drawable/icon_arrow_left"
+            android:onClick="navigateToListInterviews"/>
+
+        <Button
+            style="@style/SmallButton"
+            android:id="@+id/edit"
+            android:text="Edit"
+            android:drawableLeft="@drawable/applications"
+            android:onClick="navigateToEditInterview"/>
+
+    </LinearLayout>
 
 </LinearLayout>
