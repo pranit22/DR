@@ -89,4 +89,8 @@ public class JobApplicationsListActivity extends Activity {
     public void navigateToNewApplication(View view) {
         startActivity(new Intent(this, EditCreateJobActivity.class));
     }
+
+    public void navigateToMainMenu(View v) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }

@@ -6,6 +6,8 @@
     <string name="desc">Placeholder for mandatory string</string>
 
     <color name="buttonText">#666666</color>
+    <color name="background">#222222</color>
+    <color name="black">#111111</color>
 
     <string name="applications">APPLICATIONS</string>
     <string name="new_application">NEW APPLICATION</string>
