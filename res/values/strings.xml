@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Job Hunt Management System</string>
+    <string name="app_name">DreamTrack</string>
     <string name="action_settings">Settings</string>
     <string name="desc">Placeholder for mandatory string</string>
 

@@ -41,7 +41,7 @@
             <EditText
                 style="@style/editField"
                 android:id="@+id/description"
-                android:lines="4"
+                android:inputType="textMultiLine|textCapSentences"
                 android:gravity="left"/>
 
             <TextView
