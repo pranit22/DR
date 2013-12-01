@@ -4,26 +4,25 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="match_parent"
-        android:layout_weight="1">
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/dream_track"/>
-    </LinearLayout>
-
-
-    <Button
-        style="@style/MainButton"
-        android:text="@string/new_application"
-        android:drawableLeft="@drawable/applications"
-        android:onClick="navigateToNewApplication"/>
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="JOB APPLICATIONS"
+        />
 
     <ListView android:id="@+id/listView"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_width="match_parent"/>
 
+    <Button
+        style="@style/MainButton"
+        android:text="@string/new_application"
+        android:drawableLeft="@drawable/icon_add"
+        android:onClick="navigateToNewApplication"/>
+    
+    <Button
+        style="@style/MainButton"
+        android:text="BACK TO MAIN MENU"
+        android:drawableLeft="@drawable/icon_arrow_left"
+        android:onClick="navigateToNewApplication"/>
 </LinearLayout>
