@@ -17,6 +17,7 @@
         <activity android:name="com.dr.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,12 +36,12 @@
         <activity
             android:name="com.dr.EditCreateInterviewActivity"
             android:label="@string/title_activity_edit_create_interview"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.dr.EditCreateJobActivity"
             android:label="@string/title_activity_edit_create_job"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.dr.InterviewsListActivity"
@@ -49,10 +50,15 @@
         <activity
             android:name="com.dr.EditCreateReminderActivity"
             android:label="@string/title_activity_edit_create_reminder"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden" >
         </activity>
 
-        <service android:name=".NotificationService" />
+        <service android:name="com.dr.NotificationService" />
+
+        <activity
+            android:name="com.dr.RemindersListActivity"
+            android:label="@string/title_activity_reminders_list" >
+        </activity>
     </application>
 
 </manifest>

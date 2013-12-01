@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/ScreenTitle"
+        android:text="REMINDERS" />
+
+    <ListView android:id="@+id/listView"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:dividerHeight="2sp"
+        android:divider="@color/black"/>
+
+    <Button
+        android:id="@+id/backButton"
+        style="@style/MainButton"
+        android:text="BACK TO MAIN MENU"
+        android:drawableLeft="@drawable/icon_arrow_left"
+        android:onClick="navigateToMainMenu"/>
+</LinearLayout>

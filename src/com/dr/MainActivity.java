@@ -59,6 +59,16 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, InterviewsListActivity.class));
     }
 
+    public void navigateToListReminders(View view) {
+        startActivity(new Intent(this, RemindersListActivity.class));
+    }
+
+    public void exit(View view) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 }
 
 

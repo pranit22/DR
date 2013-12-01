@@ -30,7 +30,8 @@
     <Button
         style="@style/MainButton"
         android:text="REMINDERS"
-        android:drawableLeft="@drawable/events" />
+        android:drawableLeft="@drawable/events"
+        android:onClick="navigateToListReminders"/>
 
     <Button
         style="@style/MainButton"
@@ -41,5 +42,11 @@
         style="@style/MainButton"
         android:text="COVER LETTERS"
         android:drawableLeft="@drawable/documents" />
+
+    <Button
+        style="@style/MainButton"
+        android:text="EXIT"
+        android:drawableLeft="@drawable/icon_exit"
+        android:onClick="exit"/>
 
 </LinearLayout>

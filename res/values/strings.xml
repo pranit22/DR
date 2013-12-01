@@ -37,7 +37,6 @@
     <string name="title_activity_interviews_list">InterviewsListActivity</string>
     <string name="title_activity_edit_create_reminder">EditCreateReminderActivity</string>
 
-
     <string-array name="status">
         <item>Applied</item>
         <item>Interview Scheduled</item>
@@ -46,5 +45,7 @@
         <item>Accepted</item>
         <item>Ignored</item>
     </string-array>
+
+    <string name="title_activity_reminders_list">RemindersListActivity</string>
 
 </resources>
