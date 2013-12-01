@@ -29,22 +29,17 @@
 
     <Button
         style="@style/MainButton"
-        android:text="@string/search"
-        android:drawableLeft="@drawable/search" />
+        android:text="REMINDERS"
+        android:drawableLeft="@drawable/events" />
 
     <Button
         style="@style/MainButton"
-        android:text="@string/profile"
-        android:drawableLeft="@drawable/user" />
-
-    <Button
-        style="@style/MainButton"
-        android:text="@string/documents"
+        android:text="RESUMES"
         android:drawableLeft="@drawable/documents" />
 
     <Button
         style="@style/MainButton"
-        android:text="@string/events"
-        android:drawableLeft="@drawable/events" />
+        android:text="COVER LETTERS"
+        android:drawableLeft="@drawable/documents" />
 
 </LinearLayout>
