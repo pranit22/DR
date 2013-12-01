@@ -23,6 +23,7 @@
 
 
     <Button
+        android:id="@+id/backButton"
         style="@style/MainButton"
         android:text="BACK TO JOB APPLICATION"
         android:drawableLeft="@drawable/icon_arrow_left"

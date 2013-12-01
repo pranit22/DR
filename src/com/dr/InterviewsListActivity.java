@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import com.dr.helpers.Utilities;
 import com.dr.objects.Interview;
 import com.dr.objects.JobApplication;
 import com.dr.objects.dao.InterviewDAO;
+import com.dr.objects.dao.JobApplicationDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class InterviewsListActivity extends Activity {
     JobApplication jobApplication;
     List<Interview> interviews;
     InterviewDAO interviewDAO;
+    JobApplicationDAO jobApplicationDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,19 @@ public class InterviewsListActivity extends Activity {
         setContentView(R.layout.activity_interviews_list);
 
         Intent intent = getIntent();
-        jobApplication = (JobApplication) intent.getSerializableExtra("jobApplication");
 
         interviewDAO = new InterviewDAO(this);
         interviewDAO.open();
-        interviews = interviewDAO.getAllInterviewsByJobId(jobApplication.getJob().getJobId());
+        jobApplicationDAO = new JobApplicationDAO(this);
+        jobApplicationDAO.open();
+
+        if (intent.hasExtra("jobApplication")) {
+            jobApplication = (JobApplication) intent.getSerializableExtra("jobApplication");
+            interviews = interviewDAO.getAllInterviewsByJobId(jobApplication.getJob().getJobId());
+        } else {
+            interviews = interviewDAO.getAllInterviews();
+            ((Button) findViewById(R.id.backButton)).setText("BACK TO MAIN MENU");
+        }
 
         ListView listView = (ListView) findViewById(R.id.listView);
         InterviewListAdapter adapter = new InterviewListAdapter(this,
@@ -54,9 +65,13 @@ public class InterviewsListActivity extends Activity {
     }
 
     public void navigateToJobApplication(View view) {
-        Intent intent = new Intent(this, JobDetailsActivity.class);
-        intent.putExtra("jobApplication", jobApplication);
-        startActivity(intent);
+        if (getIntent().hasExtra("jobApplication")) {
+            Intent intent = new Intent(this, JobDetailsActivity.class);
+            intent.putExtra("jobApplication", jobApplication);
+            startActivity(intent);
+        } else {
+            startActivity(new Intent(this, MainActivity.class));
+        }
     }
 
     class InterviewListAdapter extends ArrayAdapter<Interview> {
@@ -81,7 +96,11 @@ public class InterviewsListActivity extends Activity {
                 TextView location = (TextView) v.findViewById(R.id.location);
                 TextView time = (TextView) v.findViewById(R.id.time);
                 if (company != null) {
-                    company.setText(jobApplication.getJob().getCompany());
+                    if (jobApplication != null) {
+                        company.setText(jobApplication.getJob().getCompany());
+                    } else {
+                        company.setText(getJobApplicationFromInterview(o).getJob().getCompany());
+                    }
                 }
                 if (location != null) {
                     location.setText(o.getLocation());
@@ -96,6 +115,7 @@ public class InterviewsListActivity extends Activity {
                     public void onClick(View v) {
                         Intent intent = new Intent(context, InterviewDetailsActivity.class);
                         intent.putExtra("landingActivity", InterviewsListActivity.class);
+                        intent.putExtra("allInterviews", jobApplication == null);
                         intent.putExtra("interview", o);
                         startActivity(intent);
                     }
@@ -103,6 +123,10 @@ public class InterviewsListActivity extends Activity {
             }
             return v;
         }
+    }
+
+    private JobApplication getJobApplicationFromInterview(Interview interview) {
+        return jobApplicationDAO.getJobApplicationByJobId(interview.getJobId());
     }
 
 }
