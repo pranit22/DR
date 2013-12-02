@@ -36,12 +36,14 @@
     <Button
         style="@style/MainButton"
         android:text="RESUMES"
-        android:drawableLeft="@drawable/documents" />
+        android:drawableLeft="@drawable/documents"
+        android:onClick="navigateToListResumes" />
 
     <Button
         style="@style/MainButton"
         android:text="COVER LETTERS"
-        android:drawableLeft="@drawable/documents" />
+        android:drawableLeft="@drawable/documents"
+        android:onClick="navigateToListCoverLetters"/>
 
     <Button
         style="@style/MainButton"

@@ -32,6 +32,16 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, RemindersListActivity.class));
     }
 
+    public void navigateToListResumes(View view) {
+        Intent intent = new Intent(this, DocumentsListActivity.class);
+        intent.putExtra("resume", true);
+        startActivity(intent);
+    }
+
+    public void navigateToListCoverLetters(View view) {
+        startActivity(new Intent(this, DocumentsListActivity.class));
+    }
+
     public void exit(View view) {
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
