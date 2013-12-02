@@ -113,6 +113,22 @@ public class DocumentDAO {
         return documents;
     }
 
+    public List<Document> getAllCoverLetters() {
+        List<Document> documents = new ArrayList<Document>();
+
+        String selection = TYPE + " = " + Document.COVER_LETTER;
+        Cursor cursor = database.query(TABLE_DOCUMENT, allColumns, selection, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Document document = cursorToDocument(cursor);
+            documents.add(document);
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+        return documents;
+    }
+
     private Document cursorToDocument(Cursor cursor) {
         Document document = new Document();
         document.setId(cursor.getInt(0));

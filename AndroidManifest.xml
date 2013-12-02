@@ -59,6 +59,14 @@
             android:name="com.dr.RemindersListActivity"
             android:label="@string/title_activity_reminders_list" >
         </activity>
+        <activity
+            android:name="com.dr.DocumentsListActivity"
+            android:label="@string/title_activity_documents_list" >
+        </activity>
+        <activity
+            android:name="com.dr.EditCreateDocumentActivity"
+            android:label="@string/title_activity_edit_create_document" >
+        </activity>
     </application>
 
 </manifest>
