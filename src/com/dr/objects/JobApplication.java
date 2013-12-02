@@ -8,8 +8,8 @@ import java.io.Serializable;
 public class JobApplication implements Serializable{
     Job job;
     Status status;
-    Resume resume;
-    CoverLetter coverLetter;
+    int resume;
+    int coverLetter;
 
     public Job getJob() {
         return job;
@@ -27,19 +27,19 @@ public class JobApplication implements Serializable{
         this.status = status;
     }
 
-    public Resume getResume() {
+    public int getResume() {
         return resume;
     }
 
-    public void setResume(Resume resume) {
+    public void setResume(int resume) {
         this.resume = resume;
     }
 
-    public CoverLetter getCoverLetter() {
+    public int getCoverLetter() {
         return coverLetter;
     }
 
-    public void setCoverLetter(CoverLetter coverLetter) {
+    public void setCoverLetter(int coverLetter) {
         this.coverLetter = coverLetter;
     }
 

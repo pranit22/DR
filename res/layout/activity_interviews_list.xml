@@ -18,6 +18,7 @@
     <Button
         style="@style/MainButton"
         android:text="NEW INTERVIEW"
+        android:id="@+id/newInterview"
         android:drawableLeft="@drawable/icon_add"
         android:onClick="navigateToNewInterview"/>
 

@@ -7,10 +7,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dr.helpers.DatabaseManager;
-import com.dr.objects.CoverLetter;
+import com.dr.objects.Document;
 import com.dr.objects.Job;
 import com.dr.objects.JobApplication;
-import com.dr.objects.Resume;
 import com.dr.objects.Status;
 
 import java.util.ArrayList;
@@ -73,8 +72,8 @@ public class JobApplicationDAO {
         values.put(TITLE, jobApplication.getJob().getTitle());
         values.put(DESCRIPTION, jobApplication.getJob().getDescription());
         values.put(STATUS, jobApplication.getStatus().toString());
-        values.put(RESUME, jobApplication.getResume().getId());
-        values.put(COVER_LETTER, jobApplication.getCoverLetter().getId());
+        values.put(RESUME, jobApplication.getResume());
+        values.put(COVER_LETTER, jobApplication.getCoverLetter());
 
         int insertId = (int) database.insert(TABLE_JOB_APPLICATION, null, values);
         return getJobApplicationByJobId(insertId);
@@ -86,8 +85,8 @@ public class JobApplicationDAO {
         values.put(TITLE, jobApplication.getJob().getTitle());
         values.put(DESCRIPTION, jobApplication.getJob().getDescription());
         values.put(STATUS, jobApplication.getStatus().toString());
-        values.put(RESUME, jobApplication.getResume().getId());
-        values.put(COVER_LETTER, jobApplication.getCoverLetter().getId());
+        values.put(RESUME, jobApplication.getResume());
+        values.put(COVER_LETTER, jobApplication.getCoverLetter());
 
         database.update(TABLE_JOB_APPLICATION, values, ID + " = " + jobApplication.getJob().getJobId(), null);
         return getJobApplicationByJobId(jobApplication.getJob().getJobId());
@@ -124,8 +123,8 @@ public class JobApplicationDAO {
         JobApplication jobApplication = new JobApplication();
         jobApplication.setJob(job);
         jobApplication.setStatus(Status.valueOf(cursor.getString(4)));
-        jobApplication.setResume(new Resume(cursor.getInt(5)));
-        jobApplication.setCoverLetter(new CoverLetter(cursor.getInt(6)));
+        jobApplication.setResume(cursor.getInt(5));
+        jobApplication.setCoverLetter(cursor.getInt(6));
 
         return jobApplication;
     }

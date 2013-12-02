@@ -49,5 +49,6 @@
     <string name="title_activity_reminders_list">RemindersListActivity</string>
     <string name="title_activity_documents_list">DocumentsListActivity</string>
     <string name="title_activity_edit_create_document">EditCreateDocumentActivity</string>
+    <string name="title_activity_document_details">DocumentDetailsActivity</string>
 
 </resources>

@@ -6,7 +6,7 @@
 
     <TextView
         style="@style/ScreenTitle"
-        android:text="ADD/EDIT COVER LETTER"
+        android:text="COVER LETTER DETAILS"
         android:id="@+id/screenTitle"/>
 
     <ScrollView
@@ -23,29 +23,28 @@
                 style="@style/fieldName"
                 android:text="Title" />
 
-            <EditText
-                style="@style/editField"
+            <TextView
+                style="@style/field"
                 android:id="@+id/title" />
 
             <TextView
                 style="@style/fieldName"
                 android:text="File Name" />
 
-            <EditText
-                style="@style/editField"
+            <TextView
+                style="@style/field"
                 android:id="@+id/fileName" />
 
             <TextView
                 style="@style/fieldName"
                 android:text="Description" />
 
-            <EditText
-                style="@style/editField"
-                android:id="@+id/description"
-                android:inputType="textMultiLine|textCapSentences"
-                android:gravity="left"/>
+            <TextView
+                style="@style/field"
+                android:id="@+id/description" />
 
         </LinearLayout>
+
     </ScrollView>
 
     <LinearLayout
@@ -54,19 +53,17 @@
 
         <Button
             style="@style/SmallButton"
-            android:id="@+id/cancel"
-            android:text="CANCEL"
             android:drawableLeft="@drawable/icon_arrow_left"
-            android:onClick="finishActivity"/>
+            android:id="@+id/cancel"
+            android:text="BACK"
+            android:onClick="navigateToListDocuments" />
 
         <Button
             style="@style/SmallButton"
-            android:id="@+id/submit"
-            android:text="SUBMIT"
-            android:drawableLeft="@drawable/tick"
-            android:onClick="submitAddEditDocument" />
-
+            android:drawableLeft="@drawable/applications"
+            android:id="@+id/edit"
+            android:text="EDIT"
+            android:onClick="navigateToEditDocument" />
     </LinearLayout>
-
 
 </LinearLayout>

@@ -24,8 +24,8 @@ public class JobDetailsActivity extends Activity {
         ((TextView)findViewById(R.id.title)).setText(jobApplication.getJob().getTitle());
         ((TextView)findViewById(R.id.description)).setText(jobApplication.getJob().getDescription());
         ((TextView)findViewById(R.id.status)).setText(jobApplication.getStatus().getValue());
-        ((TextView)findViewById(R.id.resume)).setText(Integer.toString(jobApplication.getResume().getId()));
-        ((TextView)findViewById(R.id.cover_letter)).setText(Integer.toString(jobApplication.getCoverLetter().getId()));
+        ((TextView)findViewById(R.id.resume)).setText(Integer.toString(jobApplication.getResume()));
+        ((TextView)findViewById(R.id.cover_letter)).setText(Integer.toString(jobApplication.getCoverLetter()));
 
     }
 

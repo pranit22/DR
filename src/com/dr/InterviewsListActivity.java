@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -45,6 +46,7 @@ public class InterviewsListActivity extends Activity {
             interviews = interviewDAO.getAllInterviewsByJobId(jobApplication.getJob().getJobId());
         } else {
             interviews = interviewDAO.getAllInterviews();
+            ((LinearLayout) (((Button) findViewById(R.id.newInterview)).getParent())).removeView(findViewById(R.id.newInterview));
             ((Button) findViewById(R.id.backButton)).setText("BACK TO MAIN MENU");
         }
 

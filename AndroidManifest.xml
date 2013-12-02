@@ -67,6 +67,10 @@
             android:name="com.dr.EditCreateDocumentActivity"
             android:label="@string/title_activity_edit_create_document" >
         </activity>
+        <activity
+            android:name="com.dr.DocumentDetailsActivity"
+            android:label="@string/title_activity_document_details" >
+        </activity>
     </application>
 
 </manifest>
