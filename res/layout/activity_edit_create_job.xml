@@ -59,7 +59,8 @@
 
             <Spinner
                 style="@style/editField"
-                android:id="@+id/resume" />
+                android:id="@+id/resume"
+                android:entries="@array/resume"/>
 
             <TextView
                 style="@style/fieldName"
@@ -67,7 +68,8 @@
 
             <Spinner
                 style="@style/editField"
-                android:id="@+id/cover_letter" />
+                android:id="@+id/cover_letter"
+                android:entries="@array/cover_letter"/>
         </LinearLayout>
     </ScrollView>
 

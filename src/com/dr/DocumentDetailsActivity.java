@@ -36,7 +36,7 @@ public class DocumentDetailsActivity extends Activity {
     }
 
     public void navigateToEditDocument(View view) {
-        Intent intent = new Intent(this, EditCreateJobActivity.class);
+        Intent intent = new Intent(this, EditCreateDocumentActivity.class);
         intent.putExtra("document", document);
         startActivity(intent);
     }

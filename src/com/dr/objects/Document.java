@@ -55,7 +55,7 @@ public class Document implements Serializable {
 
     @Override
     public String toString() {
-        return "Document [id=" + id + "]";
+        return this.getTitle();
     }
 
 }

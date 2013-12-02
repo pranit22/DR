@@ -38,12 +38,29 @@
     <string name="title_activity_edit_create_reminder">EditCreateReminderActivity</string>
 
     <string-array name="status">
+        <item>Select Status</item>
         <item>Applied</item>
         <item>Interview Scheduled</item>
         <item>Rejected</item>
         <item>Selected</item>
         <item>Accepted</item>
         <item>Ignored</item>
+    </string-array>
+
+    <string-array name="resume">
+        <item>Select Resume</item>
+        <item>Web</item>
+        <item>UI</item>
+        <item>Java</item>
+    </string-array>
+
+    <string-array name="cover_letter">
+        <item>Select Cover Letter</item>
+        <item>Web</item>
+        <item>UI</item>
+        <item>Java</item>
+        <item>General</item>
+        <item>USC</item>
     </string-array>
 
     <string name="title_activity_reminders_list">RemindersListActivity</string>

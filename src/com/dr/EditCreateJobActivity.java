@@ -3,12 +3,14 @@ package com.dr;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.dr.objects.Document;
 import com.dr.objects.Job;
@@ -40,14 +42,6 @@ public class EditCreateJobActivity extends Activity {
         resumes = documentDAO.getAllResumes();
         coverLetters = documentDAO.getAllCoverLetters();
 
-        Spinner resume = (Spinner) findViewById(R.id.resume);
-        ArrayAdapter adapter1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, resumes);
-        resume.setAdapter(adapter1);
-
-        Spinner coverLetter = (Spinner) findViewById(R.id.cover_letter);
-        ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, coverLetters);
-        resume.setAdapter(adapter2);
-
         Intent intent = getIntent();
         if (intent.hasExtra("jobApplication")) {
             jobApplication = (JobApplication) intent.getSerializableExtra("jobApplication");
@@ -56,13 +50,20 @@ public class EditCreateJobActivity extends Activity {
             ((EditText) findViewById(R.id.title)).setText(jobApplication.getJob().getTitle());
             ((EditText) findViewById(R.id.description)).setText(jobApplication.getJob().getDescription());
 
-            Spinner spinner = (Spinner) findViewById(R.id.status);
-            ArrayAdapter adapter = (ArrayAdapter) spinner.getAdapter();
-            int position = adapter.getPosition(jobApplication.getStatus().getValue());
-            spinner.setSelection(position);
+            Spinner status = (Spinner) findViewById(R.id.status);
+            ArrayAdapter statusAdapter = (ArrayAdapter) status.getAdapter();
+            int statusAdapterPosition = statusAdapter.getPosition(jobApplication.getStatus().getValue());
+            status.setSelection(statusAdapterPosition);
 
-            //((EditText)findViewById(R.id.resume)).setText(Integer.toString(jobApplication.getResume().getId()));
-            //((EditText)findViewById(R.id.cover_letter)).setText(Integer.toString(jobApplication.getCoverLetter().getId()));
+            Spinner resume = (Spinner) findViewById(R.id.resume);
+            ArrayAdapter resumeAdapter = (ArrayAdapter) resume.getAdapter();
+            int resumeAdapterPosition  = resumeAdapter.getPosition(jobApplication.getResume());
+            resume.setSelection(resumeAdapterPosition);
+
+            Spinner coverLetter = (Spinner) findViewById(R.id.cover_letter);
+            ArrayAdapter coverLetterAdapter = (ArrayAdapter) coverLetter.getAdapter();
+            int coverLetterAdapterPosition = coverLetterAdapter.getPosition(jobApplication.getStatus().getValue());
+            coverLetter.setSelection(coverLetterAdapterPosition);
 
             Button button = (Button) findViewById(R.id.submit);
             button.setOnClickListener(new View.OnClickListener() {
@@ -71,8 +72,21 @@ public class EditCreateJobActivity extends Activity {
                     jobApplication.getJob().setCompany(((EditText) findViewById(R.id.company)).getText().toString());
                     jobApplication.getJob().setTitle(((EditText) findViewById(R.id.title)).getText().toString());
                     jobApplication.getJob().setDescription(((EditText) findViewById(R.id.description)).getText().toString());
-                    //jobApplication.setResume(new Resume(1));
-                    //jobApplication.setCoverLetter(new CoverLetter(2));
+
+                    String resumeTitle = ((Spinner)findViewById(R.id.resume)).getSelectedItem().toString();
+                    for(Document currentResume : resumes) {
+                        if(currentResume.getTitle().equals(resumeTitle)) {
+                            jobApplication.setResume(currentResume.getId());
+                        }
+                    }
+
+                    String coverLetterTitle = ((Spinner)findViewById(R.id.cover_letter)).getSelectedItem().toString();
+                    for(Document currentCoverLetter : coverLetters) {
+                        if(currentCoverLetter.getTitle().equals(coverLetterTitle)) {
+                            jobApplication.setCoverLetter(currentCoverLetter.getId());
+                        }
+                    }
+
                     jobApplication.setStatus(Status.toStatus(((Spinner) findViewById(R.id.status)).getSelectedItem().toString()));
 
                     jobApplication = jobApplicationDAO.updateJobApplication(jobApplication);
@@ -93,10 +107,23 @@ public class EditCreateJobActivity extends Activity {
         job.setTitle(((EditText) findViewById(R.id.title)).getText().toString());
         job.setDescription(((EditText) findViewById(R.id.description)).getText().toString());
 
-        JobApplication jobApplication = new JobApplication();
+        jobApplication = new JobApplication();
         jobApplication.setJob(job);
-        //jobApplication.setResume(new Resume(1));
-        //jobApplication.setCoverLetter(new CoverLetter(2));
+
+        String resumeTitle = ((Spinner)findViewById(R.id.resume)).getSelectedItem().toString();
+        for(Document currentResume : resumes) {
+            if(currentResume.getTitle().equals(resumeTitle)) {
+                jobApplication.setResume(currentResume.getId());
+            }
+        }
+
+        String coverLetterTitle = ((Spinner)findViewById(R.id.cover_letter)).getSelectedItem().toString();
+        for(Document currentCoverLetter : coverLetters) {
+            if(currentCoverLetter.getTitle().equals(coverLetterTitle)) {
+                jobApplication.setCoverLetter(currentCoverLetter.getId());
+            }
+        }
+
         jobApplication.setStatus(Status.toStatus(((Spinner) findViewById(R.id.status)).getSelectedItem().toString()));
 
         jobApplication = jobApplicationDAO.addJobApplication(jobApplication);

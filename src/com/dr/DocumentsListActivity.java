@@ -92,7 +92,7 @@ public class DocumentsListActivity extends Activity {
         if (getIntent().hasExtra("resume")) {
             intent.putExtra("resume", true);
         }
-        startActivity(new Intent(this, EditCreateDocumentActivity.class));
+        startActivity(intent);
     }
 
     public void navigateToMainMenu(View v) {
